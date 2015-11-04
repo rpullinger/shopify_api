@@ -19,5 +19,9 @@ module ShopifyAPI
     def activate
       load_attributes_from_response(post(:activate))
     end
+
+    def customize(customize_recurring_app_charge_params = {})
+      load_attributes_from_response(put(:customize, recurring_application_charge: customize_recurring_app_charge_params ))
+    end
   end
 end
